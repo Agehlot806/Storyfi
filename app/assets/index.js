@@ -5,8 +5,10 @@ const   image = {
     applogo: require('./applogo.png'),
     splashscreen: require('./splashscreen.png'),
     headerimage: require('./headerimage.png'),
+    buttonimage: require('./buttonimage.png'),
 
 
+    
 
 
     

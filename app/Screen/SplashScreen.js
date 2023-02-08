@@ -7,14 +7,13 @@ const SplashScreen = ({ navigation }) => {
     const [name, setname] = useState('')
     const [name1, setname1] = useState('')
     const [date, setdate] = useState([])
-    // useFocusEffect(
-    //     React.useCallback(() => {
-    //         setTimeout(() => {
-    //             // navigation.navigate('Login')
-    //             Alllogin()
-    //         }, 800)
-    //     },)
-    // );
+    useFocusEffect(
+        React.useCallback(() => {
+            setTimeout(() => {
+                navigation.navigate('SliderScreen')
+             }, 800)
+        },)
+    );
     // const Alllogin = async () => {
     //     const IdUser = await AsyncStorage.getItem('IdA')
     //     console.log(">>>Idd", IdUser)

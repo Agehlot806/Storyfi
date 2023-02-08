@@ -11,8 +11,12 @@ import {
     Dimensions,
 } from 'react-native';
 import { scale, verticalScale, moderateScale, moderateVerticalScale } from 'react-native-size-matters';
- //   import LinearGradient from 'react-native-linear-gradient';
- import image from '../assets';
+import { useNavigation } from '@react-navigation/native';
+
+import image from '../assets';
+import StatusBar1 from '../Compoent/StatusBar';
+import Buttoncompoent from '../Compoent/Buttoncompoent';
+  
 const { width, height } = Dimensions.get('window');
 const COLORS = { primary: '#282534', white: '#fff', black: "#000", blue: '#0C7EFA' };
 const slides = [
@@ -20,15 +24,15 @@ const slides = [
         id: '1',
         image: image.monkey,
         title: 'Kids Story',
-        subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500',
+        subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s',
     },
     {
         id: '2',
         image: image.child,
-        title: 'Complete Study Material',
-        subtitle: 'Sample paper,test paper ,last paper year paper NCERT ,solustion,MCQs ,ImportaNT Question',
+        title: 'Kids Story',
+        subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s',
     },
-    
+     
 ];
 
 const Slide = ({ item }) => {
@@ -93,9 +97,10 @@ const OnBoarding = ({ navigation }) => {
                             style={[
                                 styles.indicator,
                                 currentSlideIndex == index && {
-                                    backgroundColor: "#F08072",
-                                    width: 25,
-                                    borderRadius: moderateScale(10)
+                                    backgroundColor: "#25B1E0",
+                                    width: 12,
+                                    height:12,
+                                    borderRadius: moderateScale(2)
                                 },
                             ]}
                         />
@@ -103,12 +108,12 @@ const OnBoarding = ({ navigation }) => {
                 </View>
 
                 {/* Render buttons */}
-                <View style={{ marginBottom: 20 }}>
+                {/* <View style={{ marginBottom: 20 }}>
                     <View style={{ height: 50 }}>
                         
                         <TouchableOpacity
                             style={styles.btn}
-                        // onPress={() => navigation.navigate('Loginscreen')}
+                        onPress={() => navigation.navigate('Loginscreen')}
                         >
                             <Text style={{ fontWeight: 'bold', fontSize: 15, color: "white" }}>
                                 Get Started
@@ -116,15 +121,19 @@ const OnBoarding = ({ navigation }) => {
                         </TouchableOpacity>
                     </View>
 
-                </View>
+
+                    
+                </View> */}
+
+                <Buttoncompoent/>
             </View>
         );
     };
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-             <StatusTopBar />
-            <FlatList
+             <StatusBar1/>
+             <FlatList
                 ref={ref}
                 onMomentumScrollEnd={updateCurrentSlideIndex}
                 contentContainerStyle={{ height: height * 0.75 }}
@@ -141,10 +150,10 @@ const OnBoarding = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     subtitle: {
-        color: "black",
-        fontSize: 13,
+        color: "#01031A",
+        fontSize: 16,
         marginTop: 10,
-        maxWidth: '70%',
+        maxWidth: '75%',
         textAlign: 'center',
         lineHeight: 23,
     },
@@ -160,11 +169,12 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     indicator: {
-        height: moderateScale(10),
-        width: moderateScale(10),
-        backgroundColor: "grey",
+          backgroundColor: "grey",
         marginHorizontal: 3,
-        borderRadius: moderateScale(5)
+        borderRadius: moderateScale(5),
+         width: 12,
+        height:12,
+        borderRadius: moderateScale(2)
     },
     btn: {
         flex: 1,
@@ -175,4 +185,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-export default SliderScreen;
+export default OnBoarding;
