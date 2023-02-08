@@ -8,11 +8,17 @@ import {
   Text,
   View,
 } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+
 import Navigation from './app/Appnavigatore/Navigation'
 
 const App = () => {
   return (
+    <PaperProvider>
+
     <Navigation/>
+    </PaperProvider>
+
   );
 };
 

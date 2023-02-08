@@ -16,7 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import image from '../assets';
 import StatusBar1 from '../Compoent/StatusBar';
 import Buttoncompoent from '../Compoent/Buttoncompoent';
-  
+
 const { width, height } = Dimensions.get('window');
 const COLORS = { primary: '#282534', white: '#fff', black: "#000", blue: '#0C7EFA' };
 const slides = [
@@ -32,7 +32,7 @@ const slides = [
         title: 'Kids Story',
         subtitle: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s',
     },
-     
+
 ];
 
 const Slide = ({ item }) => {
@@ -99,7 +99,7 @@ const OnBoarding = ({ navigation }) => {
                                 currentSlideIndex == index && {
                                     backgroundColor: "#25B1E0",
                                     width: 12,
-                                    height:12,
+                                    height: 12,
                                     borderRadius: moderateScale(2)
                                 },
                             ]}
@@ -122,18 +122,19 @@ const OnBoarding = ({ navigation }) => {
                     </View>
 
 
-                    
+                    Homescreen
                 </View> */}
 
-                <Buttoncompoent/>
+                <Buttoncompoent onPress={() => navigation.navigate('Homescreen')}
+                />
             </View>
         );
     };
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-             <StatusBar1/>
-             <FlatList
+            <StatusBar1 />
+            <FlatList
                 ref={ref}
                 onMomentumScrollEnd={updateCurrentSlideIndex}
                 contentContainerStyle={{ height: height * 0.75 }}
@@ -169,11 +170,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     indicator: {
-          backgroundColor: "grey",
+        backgroundColor: "grey",
         marginHorizontal: 3,
         borderRadius: moderateScale(5),
-         width: 12,
-        height:12,
+        width: 12,
+        height: 12,
         borderRadius: moderateScale(2)
     },
     btn: {
