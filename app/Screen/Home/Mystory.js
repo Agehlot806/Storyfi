@@ -15,7 +15,7 @@ import image from '../../assets';
 import Backcompoent from '../../Compoent/Backcompoent';
 import Buttoncompoent from '../../Compoent/Buttoncompoent';
 import ContinueCompoent from '../../Compoent/ContinueCompoent';
-const SelectStory = ({navigation}) => {
+const Mystory = ({navigation}) => {
 
 
     const Dateklest = [{
@@ -71,8 +71,13 @@ const SelectStory = ({navigation}) => {
         <SafeAreaView style={styles.container}>
             <ScrollView style={{ flex: 1 }}>
 
-                <Backcompoent   title={"Select a Story Option"} />
+                <Backcompoent   title={"My Stories"} />
+                <View style={{ top:scale(4)  ,height: moderateScale(39), borderRadius: scale(8), width: "92%", marginLeft: scale(10), justifyContent: "center", backgroundColor: "#F7E8C4" }}>
+                    <Text style={{ fontSize: scale(14), color: "grey", marginLeft: scale(22),textAlign:"center" }}>
+                    Here is your stories
 
+                    </Text>
+                </View>
                 {/* <ScrollView style={{ flex: 1 }}> */}
 
                 <FlatList
@@ -80,12 +85,8 @@ const SelectStory = ({navigation}) => {
                     data={Dateklest}
                     renderItem={Readertime}
                 />
-                <ContinueCompoent name={"Continue"}
-
-
-                    onPress={() => navigation.navigate('InstructionScreen')}
-                />
-                <Buttoncompoent name={"Give me new ideas"} />
+              
+                <Buttoncompoent name={"See All"}  onPress={() => navigation.navigate('InstructionScreen')} />
             </ScrollView>
 
         </SafeAreaView>
@@ -106,4 +107,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SelectStory;
+export default Mystory;

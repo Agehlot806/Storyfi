@@ -98,8 +98,8 @@ const OnBoarding = ({ navigation }) => {
                                 styles.indicator,
                                 currentSlideIndex == index && {
                                     backgroundColor: "#25B1E0",
-                                    width: 11,
-                                    height: 11,
+                                    width: 9,
+                                    height: 9,
                                     borderRadius: moderateScale(2)
                                 },
                             ]}
@@ -110,6 +110,7 @@ const OnBoarding = ({ navigation }) => {
                
 
                 <Buttoncompoent onPress={() => navigation.navigate('CreayteAcount')}
+                name={"Next"}
                 />
             </View>
         );
@@ -157,8 +158,8 @@ const styles = StyleSheet.create({
         backgroundColor: "grey",
         marginHorizontal: 3,
         borderRadius: moderateScale(5),
-        width: 11,
-        height: 11,
+        width: 9,
+        height: 9,
         borderRadius: moderateScale(2)
     },
     btn: {

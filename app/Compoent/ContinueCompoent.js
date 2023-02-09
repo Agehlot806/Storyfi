@@ -13,13 +13,13 @@ import {
 import image from '../assets';
 import { scale, verticalScale, moderateScale, moderateVerticalScale } from 'react-native-size-matters';
 
-const Buttoncompoent = ({ onPress ,name}) => {
+const ContinueCompoent = ({ onPress, name }) => {
 
 
     return (
         <SafeAreaView style={styles.container}>
             <TouchableOpacity onPress={onPress}>
-                <ImageBackground style={{ height: moderateScale(80), width: "100%", alignItems: "center", justifyContent: "center" }} source={image.buttonimage}>
+                <ImageBackground style={{ height: moderateScale(80), width: "100%", alignItems: "center", justifyContent: "center" }} source={image.Continueimage}>
                     <Text style={{ fontSize: scale(20), color: "#FFFFFF", bottom: scale(8) }}>{name}
                     </Text>
                 </ImageBackground>
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Buttoncompoent;
+export default ContinueCompoent;

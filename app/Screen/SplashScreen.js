@@ -11,7 +11,7 @@ const SplashScreen = ({ navigation }) => {
         React.useCallback(() => {
             setTimeout(() => {
                 navigation.navigate('SliderScreen')
-             }, 800)
+            }, 1200)
         },)
     );
     // const Alllogin = async () => {
